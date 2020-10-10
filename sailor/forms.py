@@ -27,13 +27,13 @@ class NewEntryForm(FlaskForm):
 	def validate_rating(self,rating):
 		if not rating.data:
 			raise ValidationError()
-		if not(0<rating.data<10):
+		if not(0<=rating.data<=10):
 			raise ValidationError("Rating can only be between 0 and 10")
 
 	def validate_age(self,age):
 		if not age:
 			raise ValidationError()
-		if not(18<age.data<85):
+		if not(18<=age.data<=85):
 			raise ValidationError("Sailors can only be between 18 and 85 years old")
 
 class EditEntryForm(FlaskForm):
@@ -49,11 +49,11 @@ class EditEntryForm(FlaskForm):
 	def validate_rating(self,rating):
 		if not rating.data:
 			raise ValidationError()
-		if not(0<rating.data<10):
+		if not(0<=rating.data<=10):
 			raise ValidationError("Rating can only be between 0 and 10")
 
 	def validate_age(self,age):
 		if not age:
 			raise ValidationError()
-		if not(18<age.data<85):
+		if not(18<=age.data<=85):
 			raise ValidationError("Sailors can only be between 18 and 85 years old")
