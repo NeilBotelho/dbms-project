@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="display-1">Welcome</h1>
+<h1>181105010</h1>
+
+
+
+<form method="POST" action="">
+    {{form.hidden_tag()}}
+<fieldset class=form-group><div class="form-group">
+      {{ form.searchTerm.label(class="form-control-label, search") }}
+      {% if form.searchTerm.errors %}
+          {{ form.searchTerm(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+              {% for error in form.searchTerm.errors %}
+                  <span>{{ error }}</span>
+              {% endfor %}
+          </div>
+      {% else %}
+          {{ form.searchTerm(class="form-control form-control-lg") }}
+      {% endif %}
+  </div></fieldset>
+  </form>
+
+
+
+
+
+  <table class='sortable table'>
+     <thead class=thead-dark>
+     <tr>
+        <th scope="col">IDs</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Rating</th>
+     </tr>
+     </thead>
+     <tbody>
+{%for row in rows%}
+        <tr>
+           <td >{{row.ID}}</td>
+           <td>{{row.name}}</td>
+           <td>{{row.age}}</td>
+           <td>{{row.rating}}</td>
+        </tr>
+     {% endfor %} 
+  	</tbody>
+  </table>
+
+{% endblock content %}
