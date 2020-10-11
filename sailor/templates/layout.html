@@ -20,7 +20,13 @@
 
   </head>
   <body>
+    <style>
+      .rollno{
+        /*position:absolute;*/
+        margin-left:90vw;
 
+      }
+    </style>
    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -45,12 +51,14 @@
         </ul>
       </div>
     </nav>
+    <div class="rollno">
+    <p >Neil</p>
+    <p>181105010</p>
+  </div>
 
 
 
-
-
-    <div class="container" ,>
+    <div class="container">
       {%with messages = get_flashed_messages(with_categories=true) %}
         {%if messages%}
           {%for category, message in messages %}
